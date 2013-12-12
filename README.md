@@ -1,9 +1,11 @@
 Location App
 
 I. Description
+
 This app will help people connect when they can't find each other. It would be especially be useful in a crowded place. Using HTML5 geolocation and a mobile device, the app will guide people towards each other. User will first sign in on sign in page, then choose the person they are looking, and finally with a bearing and distance, be guided to the other party.
 
 II(a). User Stories
+
 (MVP) As a user on the homepage, I must sign in with username and password to find another person, so the app knows what I am looking for.
 
 As an authorized user, I will be shown a list of people that I have previously added to my friends list, so I can choose whom to search for.
@@ -21,6 +23,7 @@ As a user being guided to a connection, I will be guided by the background color
 (Extra Credit) Have a way to chat with your friend as you are being guided.
 
 III. Phases & due dates
+
 V0 - Thursday - Create Rails app with models allowing me to Login, List of Friends, and Friends currently logged in.
 
 V1 - Saturday - Location of self and final destination, with a bearing (possibly fixed at first depending on the complexity of the problem) and distance to the destination.
@@ -30,6 +33,7 @@ V2 - Sunday - Moving arrow or compass and changing background as indicators to g
 V3 - Tuesday or Wednesday - Chat to friend..
 
 IV. Phase I - details
+
 As an user not logged in, I will be given a screen to enter username and password, so I can log in.
 
 As a user not logged in, I will also be given an option to sign up for access, so I can log in.
@@ -41,3 +45,17 @@ As a user logged in, I can view a list of friends, so I can find a choose someon
 As a user logged in, I can see who is currently logged in and who is not, so I know who I can currently find.
 
 As a user logged in, I have an option to find a new connection and can add them by entering an email, so I can find them.
+
+##### V. Data model
+
+![data model](./erd.pdf)
+
+##### II(b). Wireframe
+
+![data model](./wireframe1.png)
+![data model](./wireframe2.png)
+![data model](./wireframe3.png)
+
+Thoughts:
+
+Will need to check if users are logged in by checking friends sessions.
