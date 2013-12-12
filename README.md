@@ -48,13 +48,13 @@ As a user logged in, I have an option to find a new connection and can add them 
 
 ##### V. Data model
 
-![data model](./erd.pdf)
+![data model](./info/erd.pdf)
 
 ##### II(b). Wireframe
 
-![data model](./wireframe1.png)
-![data model](./wireframe2.png)
-![data model](./wireframe3.png)
+![data model](./info/wireframe1.png)
+![data model](./info/wireframe2.png)
+![data model](./info/wireframe3.png)
 
 Thoughts:
 
