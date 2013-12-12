@@ -1,0 +1,25 @@
+%div#main
+  %h1 Log In
+
+  %button#signup_button Sign up
+  %button#login_button Login
+  %div#errors
+
+  %div#signup_form{ :style => "display: none;" }
+    = form_for(User.new) do |f|
+      = f.label           :email
+      = f.text_field      :email
+      = f.label           :password
+      = f.password_field  :password
+      = f.label           :password_confirmation
+      = f.password_field  :password_confirmation
+      = f.submit
+      = link_to "Already have and account? Login.." , "/login"
+
+  %div#login_form{ :style => "display: show;" }
+    = form_tag("/login") do
+      = label_tag           :email
+      = text_field_tag      :email
+      = label_tag           :password
+      = password_field_tag  :password
+      = submit_tag          "Login"
