@@ -26,29 +26,36 @@ App.Views.Signup = Backbone.View.extend({
     "submit form" : "createUser"
   },
   initialize: function(){
+    this.username = $("#user_username")
     this.email = $("#user_email");
     this.password = $("#user_password");
     this.password_confirmation = $("#user_password_confirmation");
+    // ??? What is invalid mean here
     this.listenTo(this.model, "invalid", this.displayErrors);
     this.errors = $("#errors");
   },
-  show: function(){
+  show: function(e){
     this.$el.show();
   },
   createUser: function(e){
     e.preventDefault();
+    debugger;
     console.log('submit');
     this.model.set( this.getAttributes() );
     if (this.model.isValid()){
       this.model.save();
+      debugger;
     }
   },
   // crate hash to pass across
   getAttributes: function(){
     return {
-      email: this.email.val(),
-      password: this.password.val(),
-      password_confirmation: this.password_confirmation.val()
+      user: {
+        username: this.username.val(),
+        email: this.email.val(),
+        password: this.password.val(),
+        password_confirmation: this.password_confirmation.val()
+      }
     }
   },
   displayErrors: function(){
@@ -63,8 +70,8 @@ App.Views.Login = Backbone.View.extend({
     "submit form" : "loginUser"
   },
   initialize: function(){
-    this.email = $("#email");
-    this.passsword = $("#password");
+    this.username = $("#username");
+    this.password = $("#password");
   },
   show: function(){
     this.$el.show();
@@ -73,11 +80,13 @@ App.Views.Login = Backbone.View.extend({
     e.preventDefault();
     console.log("auth needed");
     this.model.set( this.getAttributes() );
+    debugger;
     this.model.authenticate();
+    debugger;
   },
   getAttributes: function(){
     return {
-      email: this.email.val(),
+      username: this.username.val(),
       password: this.password.val()
     }
   }

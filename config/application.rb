@@ -5,6 +5,7 @@ require 'rails/all'
 if Rails.env.test?
     require 'simplecov'
     SimpleCov.start
+    I18n.enforce_available_locales = false
 end
 
 # Require the gems listed in Gemfile, including any gems

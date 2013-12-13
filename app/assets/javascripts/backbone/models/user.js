@@ -1,18 +1,22 @@
 App.Models.User = Backbone.Model.extend({
   urlRoot: "/users",
   defaults: {
-    "email":                  "",
-    "password":               "",
-    "password_confirmation":  ""
+    user: {
+      "username":               "",
+      "email":                  "",
+      "password":               "",
+      "password_confirmation":  ""
+    }
   },
   // attrs is model attributes
   // options are what's passed from save or set
   validate: function(attrs, options){
     var errors = [];
-    if(attrs.email === "" || attrs.password === "" || attrs.password_confirmation === ""){
+    debugger;
+    if(attrs.user.username === "" || attrs.user.email === "" || attrs.user.password === "" || attrs.user.password_confirmation === ""){
       errors.push("Fields can't be Blank!");
     }
-    if(attrs.password !== attrs.password_confirmation) {
+    if(attrs.user.password !== attrs.user.password_confirmation) {
       errors.push("Passwords must match");
     }
     if(errors.length > 0) {
@@ -20,12 +24,13 @@ App.Models.User = Backbone.Model.extend({
     }
   },
   authenticate: function(){
+    debugger;
     var user = this;
     $.ajax({
       url: "/login",
       type: "post",
       data: {
-        email: this.get('email'),
+        username: this.get('username'),
         password: this.get('password')
       }
     }).done(function(response){
@@ -40,10 +45,11 @@ App.Models.Dog = Backbone.Model.extend({
     return { dog: _.clone( this.attributes ) }
   },
   defaults: {
-    "name" : "name",
-    "password" : "password",
+    "username" :              "username",
+    "name" :                  "name",
+    "password" :              "password",
     "password_confirmation" : "password_confirmation"
   }
 });
 
-d1 = new App.Models.Dog({email: "phil", password: "phil", password_confirmation: "phil"});
+d1 = new App.Models.Dog({ username: "philco", email: "phil", password: "phil", password_confirmation: "phil"});

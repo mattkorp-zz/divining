@@ -52,9 +52,9 @@ As a user logged in, I have an option to find a new connection and can add them 
 
 ##### II(b). Wireframe
 
-![data model](./info/wireframe1.png)
-![data model](./info/wireframe2.png)
-![data model](./info/wireframe3.png)
+![wireframe](./info/wireframe1.png)
+![wireframe](./info/wireframe2.png)
+![wireframe](./info/wireframe3.png)
 
 Thoughts:
 

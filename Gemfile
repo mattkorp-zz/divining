@@ -34,6 +34,8 @@ end
 
 # Use ActiveModel has_secure_password
 gem 'bcrypt-ruby', '~> 3.1.2'
+#gem 'bcrypt-ruby', :require => 'bcrypt'
+#gem 'email_validator'
 
 # Use unicorn as the app server
 # gem 'unicorn'
@@ -43,7 +45,9 @@ gem 'bcrypt-ruby', '~> 3.1.2'
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
-
+gem 'factory_girl', group: [:test, :development]
+gem 'shoulda', group: [:test, :development]
+gem 'shoulda-matchers', :require => false, group: [:test, :development]
 gem "rspec-rails", group: [:test, :development]
 gem "guard-rspec", group: [:test, :development]
 gem "capybara", group: [:test, :development]

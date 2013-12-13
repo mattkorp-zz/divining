@@ -17,7 +17,7 @@
 //= require handlebars
 //= require underscore
 //= require backbone
-//= require backbone.debug
+// require backbone.debug
 //
 //= require ./backbone/setup
 //= require_tree ./backbone/routers
